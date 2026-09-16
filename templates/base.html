@@ -1,0 +1,205 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {% block title %}
+            AI Study Tracker
+        {% endblock %}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/base.css' %}"
+    >
+
+    {% block extra_css %}
+    {% endblock %}
+</head>
+
+<body class="page">
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar__logo">
+            <a href="{% url 'dashboard:index' %}">
+                AI Study Tracker
+            </a>
+        </div>
+
+        <nav class="sidebar__nav">
+
+            <a
+                href="{% url 'dashboard:index' %}"
+                class="sidebar__link"
+            >
+                Главная
+            </a>
+
+            <a
+                href="#"
+                class="sidebar__link"
+            >
+                Мои направления
+            </a>
+
+            <a
+                href="#"
+                class="sidebar__link"
+            >
+                План обучения
+            </a>
+
+            <a
+                href="#"
+                class="sidebar__link"
+            >
+                Аналитика
+            </a>
+
+            <a
+                href="#"
+                class="sidebar__link"
+            >
+                AI Coach
+            </a>
+
+            <a
+                href="#"
+                class="sidebar__link"
+            >
+                Достижения
+            </a>
+
+            <a
+                href="#"
+                class="sidebar__link"
+            >
+                Настройки
+            </a>
+
+        </nav>
+
+
+        <!-- PRO -->
+        <div class="sidebar__pro">
+
+            <span class="sidebar__pro-icon">
+                ♛
+            </span>
+
+            <h3 class="sidebar__pro-title">
+                Перейди на PRO
+            </h3>
+
+            <p class="sidebar__pro-text">
+                Больше возможностей.
+                Персональные рекомендации.
+            </p>
+
+            <a
+                href="#"
+                class="sidebar__pro-button"
+            >
+                Открыть PRO
+            </a>
+
+        </div>
+
+
+        <!-- User -->
+        <div class="sidebar__user">
+
+            {% if user.is_authenticated %}
+
+                <div class="sidebar__user-avatar">
+                    {{ user.username|first|upper }}
+                </div>
+
+                <div class="sidebar__user-info">
+
+                    <span class="sidebar__user-name">
+                        {{ user.username }}
+                    </span>
+
+                    <span class="sidebar__user-plan">
+                        Бесплатный план
+                    </span>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main area -->
+    <div class="layout__main">
+
+        <!-- Header -->
+        <header class="header">
+
+            <div class="header__search">
+                <input
+                    type="search"
+                    placeholder="Поиск тем, направлений..."
+                >
+            </div>
+
+            <div class="header__actions">
+
+                <button
+                    type="button"
+                    class="header__notification"
+                >
+                    ♧
+                </button>
+
+                {% if user.is_authenticated %}
+
+                    <a
+                        href="#"
+                        class="header__profile"
+                    >
+                        {{ user.username }}
+                    </a>
+
+                {% endif %}
+
+            </div>
+
+        </header>
+
+
+        <!-- Page content -->
+        <main class="content">
+
+            {% block content %}
+            {% endblock %}
+
+        </main>
+
+    </div>
+
+</div>
+
+
+{% block extra_js %}
+{% endblock %}
+
+</body>
+</html>

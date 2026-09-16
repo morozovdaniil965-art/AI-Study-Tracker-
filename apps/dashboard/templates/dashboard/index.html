@@ -1,0 +1,624 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block title %}
+    Главная — AI Study Tracker
+{% endblock %}
+
+
+{% block extra_css %}
+
+<link
+    rel="stylesheet"
+    href="{% static 'dashboard/css/dashboard.css' %}"
+>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="dashboard">
+
+    <!-- Заголовок -->
+    <section class="dashboard__welcome">
+
+        <div>
+            <h1 class="dashboard__title">
+                Добрый вечер, {{ user.username }}! 👋
+            </h1>
+
+            <p class="dashboard__subtitle">
+                Продолжай двигаться к своим целям.
+                Ты делаешь это отлично!
+            </p>
+        </div>
+
+        <p class="dashboard__quote">
+            «Маленькие шаги каждый день
+            приводят к большим результатам»
+        </p>
+
+    </section>
+
+
+    <!-- Основная статистика -->
+    <section class="dashboard__stats">
+
+        <article class="stat-card">
+
+            <div class="stat-card__progress">
+                <span>42%</span>
+            </div>
+
+            <div class="stat-card__content">
+
+                <h3>
+                    Общий прогресс
+                </h3>
+
+                <p>
+                    18 из 43 тем
+                </p>
+
+                <span>
+                    изучено
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="stat-card">
+
+            <div class="stat-card__icon stat-card__icon--purple">
+                ◈
+            </div>
+
+            <div class="stat-card__content">
+
+                <h3>
+                    3
+                </h3>
+
+                <p>
+                    Активных
+                    направлений
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="stat-card">
+
+            <div class="stat-card__icon stat-card__icon--orange">
+                🔥
+            </div>
+
+            <div class="stat-card__content">
+
+                <h3>
+                    12
+                </h3>
+
+                <p>
+                    Дней подряд
+                </p>
+
+            </div>
+
+            <span class="stat-card__badge">
+                +2
+            </span>
+
+        </article>
+
+
+        <article class="stat-card">
+
+            <div class="stat-card__icon stat-card__icon--blue">
+                ◷
+            </div>
+
+            <div class="stat-card__content">
+
+                <h3>
+                    27 ч 40 мин
+                </h3>
+
+                <p>
+                    Время обучения
+                </p>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- Контент -->
+    <div class="dashboard__grid">
+
+        <div class="dashboard__main">
+
+
+            <!-- Сегодня -->
+            <section class="dashboard-card">
+
+                <div class="dashboard-card__header">
+
+                    <div>
+
+                        <h2>
+                            Сегодня
+                        </h2>
+
+                        <p>
+                            15 сентября 2026
+                        </p>
+
+                    </div>
+
+                    <a href="#">
+                        Смотреть план →
+                    </a>
+
+                </div>
+
+
+                <div class="today-card">
+
+                    <div class="today-card__icon">
+                        dj
+                    </div>
+
+                    <div class="today-card__info">
+
+                        <span>
+                            Django
+                        </span>
+
+                        <h3>
+                            QuerySet
+                        </h3>
+
+                        <div class="today-card__meta">
+
+                            <span>
+                                ◷ 45 минут
+                            </span>
+
+                            <span>
+                                ▣ Теория + практика
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="today-card__action">
+
+                        <div class="today-card__progress">
+                            <div></div>
+                        </div>
+
+                        <span>
+                            75%
+                        </span>
+
+                        <a href="#">
+                            Продолжить →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Направления -->
+            <section class="dashboard-card">
+
+                <div class="dashboard-card__header">
+
+                    <h2>
+                        Мои направления
+                    </h2>
+
+                    <a href="#">
+                        Добавить направление +
+                    </a>
+
+                </div>
+
+
+                <div class="subjects">
+
+
+                    <a href="#" class="subject">
+
+                        <div class="subject__icon subject__icon--python">
+                            🐍
+                        </div>
+
+                        <strong>
+                            Python
+                        </strong>
+
+                        <span class="subject__percent subject__percent--green">
+                            72%
+                        </span>
+
+                        <div class="subject__bar">
+                            <div style="width: 72%;"></div>
+                        </div>
+
+                        <span class="subject__count">
+                            18 из 25 тем
+                        </span>
+
+                        <span class="subject__arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a href="#" class="subject">
+
+                        <div class="subject__icon subject__icon--django">
+                            dj
+                        </div>
+
+                        <strong>
+                            Django
+                        </strong>
+
+                        <span class="subject__percent subject__percent--purple">
+                            41%
+                        </span>
+
+                        <div class="subject__bar">
+                            <div style="width: 41%;"></div>
+                        </div>
+
+                        <span class="subject__count">
+                            12 из 29 тем
+                        </span>
+
+                        <span class="subject__arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a href="#" class="subject">
+
+                        <div class="subject__icon subject__icon--english">
+                            🇬🇧
+                        </div>
+
+                        <strong>
+                            English
+                        </strong>
+
+                        <span class="subject__percent subject__percent--pink">
+                            23%
+                        </span>
+
+                        <div class="subject__bar">
+                            <div style="width: 23%;"></div>
+                        </div>
+
+                        <span class="subject__count">
+                            5 из 22 тем
+                        </span>
+
+                        <span class="subject__arrow">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- Статистика -->
+            <section class="dashboard-card statistics">
+
+                <div class="dashboard-card__header">
+
+                    <h2>
+                        Статистика
+                    </h2>
+
+                    <select>
+                        <option>
+                            Последние 7 дней
+                        </option>
+
+                        <option>
+                            Последние 30 дней
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="chart">
+
+                    <div class="chart__y">
+                        <span>3 ч</span>
+                        <span>2 ч</span>
+                        <span>1 ч</span>
+                        <span>0</span>
+                    </div>
+
+
+                    <div class="chart__area">
+
+                        <div class="chart__grid"></div>
+
+                        <div class="chart__line">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="chart__days">
+
+                    <span>Пн</span>
+                    <span>Вт</span>
+                    <span>Ср</span>
+                    <span>Чт</span>
+                    <span>Пт</span>
+                    <span>Сб</span>
+                    <span>Вс</span>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- Правая колонка -->
+        <aside class="dashboard__side">
+
+
+            <!-- AI Coach -->
+            <section class="ai-card">
+
+                <div class="ai-card__header">
+
+                    <h2>
+                        ✦ AI Coach
+                    </h2>
+
+                    <span>
+                        PRO
+                    </span>
+
+                </div>
+
+
+                <div class="ai-card__robot">
+                    🤖
+                </div>
+
+
+                <h3>
+                    Привет, {{ user.username }}!
+                </h3>
+
+                <p>
+                    Я проанализировал твой прогресс
+                    и подготовил рекомендации
+                    на сегодня.
+                </p>
+
+
+                <ul class="ai-card__recommendations">
+
+                    <li>
+                        <span>✓</span>
+                        Повторить QuerySet
+                        <time>15 мин</time>
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        Решить 2 задачи по ORM
+                        <time>30 мин</time>
+                    </li>
+
+                    <li>
+                        <span>✓</span>
+                        Изучить prefetch_related
+                        <time>20 мин</time>
+                    </li>
+
+                </ul>
+
+
+                <a href="#" class="ai-card__button">
+                    🔒 Показать полный план
+                </a>
+
+                <small>
+                    Доступно в PRO
+                </small>
+
+            </section>
+
+
+            <!-- Достижения -->
+            <section class="dashboard-card achievements">
+
+                <div class="dashboard-card__header">
+
+                    <h2>
+                        Недавние достижения
+                    </h2>
+
+                    <a href="#">
+                        Смотреть все →
+                    </a>
+
+                </div>
+
+
+                <div class="achievement">
+
+                    <div class="achievement__icon">
+                        🟢
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Первые 10 тем
+                        </strong>
+
+                        <p>
+                            Отличное начало!
+                        </p>
+
+                    </div>
+
+                    <span>
+                        +50 XP
+                    </span>
+
+                </div>
+
+
+                <div class="achievement">
+
+                    <div class="achievement__icon">
+                        🔥
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            7 дней подряд
+                        </strong>
+
+                        <p>
+                            Так держать!
+                        </p>
+
+                    </div>
+
+                    <span>
+                        +100 XP
+                    </span>
+
+                </div>
+
+
+                <div class="achievement">
+
+                    <div class="achievement__icon">
+                        🎯
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Завершил раздел
+                        </strong>
+
+                        <p>
+                            Python: Основы
+                        </p>
+
+                    </div>
+
+                    <span>
+                        +150 XP
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- Мотивационный блок -->
+            <section class="motivation">
+
+                <h2>
+                    Дисциплина сегодня —
+                    свобода завтра.
+                </h2>
+
+                <p>
+                    Маленькие шаги каждый день.
+                </p>
+
+            </section>
+
+
+        </aside>
+
+    </div>
+
+
+    <!-- PRO banner -->
+    <section class="pro-banner">
+
+        <div>
+
+            <span class="pro-banner__icon">
+                ♛
+            </span>
+
+            <div>
+
+                <h2>
+                    Раскрой весь потенциал с PRO
+                </h2>
+
+                <p>
+                    AI-планы, персональные рекомендации,
+                    проверка знаний и многое другое.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <a href="#">
+            Узнать больше →
+        </a>
+
+    </section>
+
+</div>
+
+{% endblock %}
