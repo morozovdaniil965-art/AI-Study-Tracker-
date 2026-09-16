@@ -8,23 +8,25 @@ Content-type: text/css
 
 Request headers: 
     
-    date: Tue, 15 Sep 2026 11:03:28 GMT
+    :authority www.postgresql.org
     
-    etag: W/"5f6110d1-26f1b"
-
-    last-modified: Tue, 15 Sep 2020 19:06:57 GMT
+    :method GET
     
-    server:nginx
+    :path /media/css/bootstrap-4.4.1.min.css
+    
+    :scheme https
+    
+    accept: text/css,*/*;q=0.1
 
 Response headers:
 
-    :scheme https
+    accept-ranges: bytes
+
+    age: 14242
     
-    accept-encoding: gzip, deflate, br, zstd
+    content-encoding: gzip
     
-    accept-language: ru,en;q=0.9
-    
-    cache-control: no-cache
+    content-length: 23681
 
 Вывод: браузер запросил CSS-файл Bootstrap с сервера PostgreSQL с помощью HTTP-метода GET. 
 Сервер вернул ответ со статусом 200 OK.
