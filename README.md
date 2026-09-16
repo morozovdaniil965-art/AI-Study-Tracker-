@@ -1,6 +1,6 @@
 AiStudyTracker — учебный проект для работы с учебными материалами и отслеживания прогресса обучения.
 
-Планируемый стек: Python, Django, Git , Html, Css , JavaScript, Bootsrap , PostegreSQL.
+Планируемый стек: Python, Django, Git , Html, Css , JavaScript, Bootstrap , PostgreSQL.
 
 Проект нахо дится на начальном этапе разработки. На данном этапе подготовлена базовая структура Django-проекта и 
 выполняется настройка Git и GitHub.
