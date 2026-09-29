@@ -6,3 +6,7 @@ def Index(request):
 
     return render( request, 'dashboard/index.html')
 
+
+def CreateSubject(request):
+
+    return render( request, 'dashboard/create_subject.html')
