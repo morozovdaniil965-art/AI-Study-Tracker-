@@ -5,5 +5,6 @@ from . import views
 app_name = 'dashboard'
 
 urlpatterns = [
-   path( '', views.Index , name="index" )
+   path( '', views.Index , name="index" ),
+   path( 'create-subject/', views.CreateSubject, name='create_subject')
 ]

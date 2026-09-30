@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Создание направления — AI Study Tracker
+{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'dashboard/css/create_subject.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+    <nav class="create-subject__breadcrumb">
+        <a href="#">Направления</a>
+        <span>›</span>
+        <span>Создать направление</span>
+    </nav>
+
+    <header class="create-subject__header">
+        <h1 class="create-subject__title">
+            Создать новое направление
+        </h1>
+
+        <p class="create-subject__subtitle">
+            Добавь направление, которое хочешь изучать.
+        </p>
+    </header>
+
+
+    <div class="create-subject__layout">
+
+        <!-- Форма -->
+
+        <form
+            class="subject-form"
+            action="#"
+            method="post"
+            enctype="multipart/form-data"
+        >
+
+            {% csrf_token %}
+
+            <div class="subject-form__field">
+
+                <label for="subject-name">
+                    Название направления
+                    <span>*</span>
+                </label>
+
+                <input
+                    id="subject-name"
+                    name="subject_name"
+                    type="text"
+                    placeholder="Например, Python, Django, Frontend"
+                    required
+                >
+
+                <small>
+                    Сделай название коротким и понятным
+                </small>
+
+            </div>
+
+
+            <div class="subject-form__field">
+
+                <label for="subject-description">
+                    Описание
+                </label>
+
+                <textarea
+                    id="subject-description"
+                    name="subject_description"
+                    placeholder="Расскажи, чему хочешь научиться и какие цели у этого направления"
+                    maxlength="300"
+                ></textarea>
+
+                <div class="subject-form__counter">
+                    0 / 300
+                </div>
+
+            </div>
+
+
+            <fieldset class="subject-form__icons">
+
+                <legend>
+                    Иконка направления
+                </legend>
+
+
+                <div class="icon-option">
+
+                    <input
+                        type="radio"
+                        id="default-icon"
+                        name="icon_type"
+                        value="default"
+                        checked
+                    >
+
+                    <label for="default-icon">
+                        Выбрать из стандартных
+                    </label>
+
+                </div>
+
+
+                <div class="subject-icons">
+
+                    <button
+                        class="subject-icon subject-icon--active"
+                        type="button"
+                        aria-label="Python"
+                    >
+                        🐍
+                    </button>
+
+                    <button
+                        class="subject-icon"
+                        type="button"
+                        aria-label="Django"
+                    >
+                        dj
+                    </button>
+
+                    <button
+                        class="subject-icon"
+                        type="button"
+                        aria-label="HTML"
+                    >
+                        HTML
+                    </button>
+
+                    <button
+                        class="subject-icon"
+                        type="button"
+                        aria-label="CSS"
+                    >
+                        CSS
+                    </button>
+
+                    <button
+                        class="subject-icon"
+                        type="button"
+                        aria-label="JavaScript"
+                    >
+                        JS
+                    </button>
+
+                    <button
+                        class="subject-icon"
+                        type="button"
+                        aria-label="Аналитика"
+                    >
+                        📊
+                    </button>
+
+                    <button
+                        class="subject-icon"
+                        type="button"
+                        aria-label="База данных"
+                    >
+                        🗄
+                    </button>
+
+                    <button
+                        class="subject-icon"
+                        type="button"
+                        aria-label="Программирование"
+                    >
+                        &lt;/&gt;
+                    </button>
+
+                </div>
+
+
+                <div class="icon-option icon-option--upload">
+
+                    <input
+                        type="radio"
+                        id="custom-icon"
+                        name="icon_type"
+                        value="custom"
+                    >
+
+                    <label for="custom-icon">
+                        Загрузить свою иконку
+                    </label>
+
+                </div>
+
+
+                <label
+                    class="subject-upload"
+                    for="subject-icon"
+                >
+
+                    <span class="subject-upload__icon">
+                        🖼
+                    </span>
+
+                    <span class="subject-upload__content">
+
+                        <strong>
+                            Выбрать изображение
+                        </strong>
+
+                        <small>
+                            PNG, JPG, SVG. Максимальный размер — 2 МБ
+                        </small>
+
+                    </span>
+
+                    <input
+                        id="subject-icon"
+                        name="subject_icon"
+                        type="file"
+                        accept=".png,.jpg,.jpeg,.svg"
+                    >
+
+                </label>
+
+            </fieldset>
+
+
+            <div class="subject-form__actions">
+
+                <a
+                    class="subject-form__cancel"
+                    href="#"
+                >
+                    Отмена
+                </a>
+
+                <button
+                    class="subject-form__submit"
+                    type="submit"
+                >
+                    Создать направление
+                    <span>→</span>
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <!-- Иллюстрация -->
+
+        <aside class="create-subject__illustration">
+
+            <img
+                src="{% static 'dashboard/images/form_img.png' %}"
+                alt="Рабочее место для обучения с ноутбуком, книгами и учебными материалами"
+            >
+
+            <div class="create-subject__illustration-content">
+
+                <h2>
+                    Новые знания —
+                    новые возможности
+                </h2>
+
+                <p>
+                    Создавай направления, изучай
+                    интересные темы и следи
+                    за своим прогрессом в одном месте.
+                </p>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+
+{% endblock %}
