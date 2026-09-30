@@ -6,5 +6,5 @@ app_name = 'dashboard'
 
 urlpatterns = [
    path( '', views.Index , name="index" ),
-   path( '/create-subject', views.CreateSubject, name='create_subject')
+   path( 'create-subject/', views.CreateSubject, name='create_subject')
 ]
