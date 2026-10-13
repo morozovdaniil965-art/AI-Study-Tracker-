@@ -522,6 +522,10 @@ textarea {
    ========================= */
 
 .content {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+
     padding: 0 32px 40px;
 }
 
@@ -683,10 +687,6 @@ textarea {
 
 
 @media (max-width: 700px) {
-
-    .create-subject {
-        padding: 24px 16px 40px;
-    }
 
     .create-subject__title {
         font-size: 28px;
