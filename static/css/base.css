@@ -90,6 +90,8 @@ textarea {
 .page {
     min-height: 100vh;
 
+    overflow-wrap: anywhere;
+
     background: var(--color-background, #f7f7fc);
 
     color: var(--color-text, #17172f);
@@ -353,15 +355,10 @@ textarea {
 
 
 .sidebar__user-name {
-    overflow: hidden;
-
     color: var(--color-text, #17172f);
 
     font-size: 12px;
     font-weight: 600;
-
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 
@@ -380,6 +377,7 @@ textarea {
 
 .layout__main {
     width: calc(100% - var(--sidebar-width, 240px));
+    min-width: 0;
 
     min-height: 100vh;
 
@@ -496,6 +494,7 @@ textarea {
 .header__profile {
     display: flex;
     align-items: center;
+    min-width: 0;
 
     min-height: 38px;
 
@@ -669,49 +668,4 @@ textarea {
         align-items: flex-start;
         gap: 8px;
     }
-}
-
-/* Адаптив */
-
-@media (max-width: 950px) {
-
-    .create-subject__layout {
-        grid-template-columns: 1fr;
-    }
-
-    .create-subject__illustration {
-        min-height: 350px;
-    }
-
-}
-
-
-@media (max-width: 700px) {
-
-    .create-subject__title {
-        font-size: 28px;
-    }
-
-    .subject-form {
-        padding: 22px;
-    }
-
-    .subject-icons {
-        gap: 8px;
-    }
-
-    .subject-icon {
-        width: 58px;
-        height: 58px;
-    }
-
-    .subject-form__actions {
-        flex-direction: column-reverse;
-    }
-
-    .subject-form__cancel,
-    .subject-form__submit {
-        width: 100%;
-    }
-
 }

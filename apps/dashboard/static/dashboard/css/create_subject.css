@@ -58,6 +58,8 @@
 /* Форма */
 
 .subject-form {
+    min-width: 0;
+
     padding: 32px;
 
     background: #ffffff;
@@ -247,6 +249,8 @@
 }
 
 .subject-upload {
+    position: relative;
+
     min-height: 82px;
 
     display: flex;
@@ -291,6 +295,25 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    min-width: 0;
+}
+
+.subject-upload input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+.subject-upload:focus-within {
+    outline: 3px solid rgba(99, 71, 245, 0.35);
+    outline-offset: 3px;
 }
 
 .subject-upload__content strong {
@@ -310,10 +333,9 @@
 
 .create-subject__illustration {
     position: relative;
+    min-width: 0;
 
     min-height: 620px;
-
-    overflow: hidden;
 
     border-radius: 20px;
 
@@ -324,9 +346,12 @@
 
 .create-subject__illustration img {
     width: 100%;
+    max-width: 100%;
     height: 100%;
 
     display: block;
+
+    border-radius: inherit;
 
     object-fit: cover;
 }
@@ -337,6 +362,8 @@
     position: absolute;
 
     inset: 0;
+
+    border-radius: inherit;
 
     background: linear-gradient(
         to bottom,
@@ -349,6 +376,7 @@
     position: absolute;
 
     z-index: 1;
+    min-width: 0;
 
     left: 28px;
     right: 28px;
@@ -450,4 +478,45 @@
 
 .subject-form__submit span {
     font-size: 18px;
+}
+
+
+/* Адаптив формы */
+
+@media (max-width: 950px) {
+    .create-subject__layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .create-subject__illustration {
+        min-height: 350px;
+    }
+}
+
+@media (max-width: 700px) {
+    .create-subject__title {
+        font-size: 28px;
+    }
+
+    .subject-form {
+        padding: 22px;
+    }
+
+    .subject-icons {
+        gap: 8px;
+    }
+
+    .subject-icon {
+        width: 58px;
+        height: 58px;
+    }
+
+    .subject-form__actions {
+        flex-direction: column-reverse;
+    }
+
+    .subject-form__cancel,
+    .subject-form__submit {
+        width: 100%;
+    }
 }

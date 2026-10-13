@@ -47,7 +47,7 @@
 
 .dashboard__stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
 
     margin-bottom: 22px;
@@ -56,6 +56,7 @@
 
 .stat-card {
     position: relative;
+    min-width: 0;
 
     display: flex;
     align-items: center;
@@ -202,12 +203,16 @@
 }
 
 .dashboard__main {
+    min-width: 0;
+
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
 .dashboard__side {
+    min-width: 0;
+
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -505,7 +510,6 @@
 .subject__count {
     font-size: 11px;
     color: #858597;
-    white-space: nowrap;
 }
 
 .subject__arrow {
