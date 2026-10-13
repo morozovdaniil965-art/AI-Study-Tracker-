@@ -90,9 +90,9 @@ textarea {
 .page {
     min-height: 100vh;
 
-    background: var(--color-background);
+    background: var(--color-background, #f7f7fc);
 
-    color: var(--color-text);
+    color: var(--color-text, #17172f);
 
     font-family:
         Inter,
@@ -128,13 +128,13 @@ textarea {
     display: flex;
     flex-direction: column;
 
-    width: var(--sidebar-width);
+    width: var(--sidebar-width, 240px);
 
     padding: 24px 16px;
 
-    background: var(--color-white);
+    background: var(--color-white, #ffffff);
 
-    border-right: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border, #eeeeF7);
 }
 
 
@@ -149,7 +149,7 @@ textarea {
 .sidebar__logo a {
     display: inline-block;
 
-    color: var(--color-text);
+    color: var(--color-text, #17172f);
 
     font-size: 19px;
     font-weight: 750;
@@ -183,15 +183,15 @@ textarea {
     font-weight: 500;
 
     transition:
-        background var(--transition),
-        color var(--transition);
+        background var(--transition, 0.2s ease),
+        color var(--transition, 0.2s ease);
 }
 
 
 .sidebar__link:hover {
     background: #f6f4ff;
 
-    color: var(--color-primary);
+    color: var(--color-primary, #6548f5);
 }
 
 
@@ -206,7 +206,7 @@ textarea {
 .sidebar__link--active {
     background: #efecff;
 
-    color: var(--color-primary);
+    color: var(--color-primary, #6548f5);
 
     font-weight: 600;
 }
@@ -221,7 +221,7 @@ textarea {
 
     padding: 18px;
 
-    border-radius: var(--radius-large);
+    border-radius: var(--radius-large, 18px);
 
     background:
         linear-gradient(
@@ -257,7 +257,7 @@ textarea {
 .sidebar__pro-title {
     margin-bottom: 7px;
 
-    color: var(--color-text);
+    color: var(--color-text, #17172f);
 
     font-size: 14px;
     font-weight: 700;
@@ -267,7 +267,7 @@ textarea {
 .sidebar__pro-text {
     margin-bottom: 15px;
 
-    color: var(--color-text-secondary);
+    color: var(--color-text-secondary, #73738a);
 
     font-size: 11px;
     line-height: 1.5;
@@ -285,7 +285,7 @@ textarea {
 
     border-radius: 9px;
 
-    background: var(--color-primary);
+    background: var(--color-primary, #6548f5);
 
     color: #ffffff;
 
@@ -293,8 +293,8 @@ textarea {
     font-weight: 600;
 
     transition:
-        transform var(--transition),
-        box-shadow var(--transition);
+        transform var(--transition, 0.2s ease),
+        box-shadow var(--transition, 0.2s ease);
 }
 
 
@@ -319,7 +319,7 @@ textarea {
     margin-top: 18px;
     padding: 15px 8px 0;
 
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid var(--color-border, #eeeeF7);
 }
 
 
@@ -337,7 +337,7 @@ textarea {
 
     background: #eeeaff;
 
-    color: var(--color-primary);
+    color: var(--color-primary, #6548f5);
 
     font-size: 14px;
     font-weight: 700;
@@ -355,7 +355,7 @@ textarea {
 .sidebar__user-name {
     overflow: hidden;
 
-    color: var(--color-text);
+    color: var(--color-text, #17172f);
 
     font-size: 12px;
     font-weight: 600;
@@ -368,7 +368,7 @@ textarea {
 .sidebar__user-plan {
     margin-top: 3px;
 
-    color: var(--color-text-muted);
+    color: var(--color-text-muted, #9999a8);
 
     font-size: 10px;
 }
@@ -379,11 +379,11 @@ textarea {
    ========================= */
 
 .layout__main {
-    width: calc(100% - var(--sidebar-width));
+    width: calc(100% - var(--sidebar-width, 240px));
 
     min-height: 100vh;
 
-    margin-left: var(--sidebar-width);
+    margin-left: var(--sidebar-width, 240px);
 }
 
 
@@ -432,13 +432,13 @@ textarea {
 
     background: #ffffff;
 
-    color: var(--color-text);
+    color: var(--color-text, #17172f);
 
     font-size: 12px;
 
     transition:
-        border-color var(--transition),
-        box-shadow var(--transition);
+        border-color var(--transition, 0.2s ease),
+        box-shadow var(--transition, 0.2s ease);
 }
 
 
@@ -484,7 +484,7 @@ textarea {
 
     cursor: pointer;
 
-    transition: background var(--transition);
+    transition: background var(--transition, 0.2s ease);
 }
 
 
@@ -503,12 +503,12 @@ textarea {
 
     border-radius: 10px;
 
-    color: var(--color-text);
+    color: var(--color-text, #17172f);
 
     font-size: 12px;
     font-weight: 600;
 
-    transition: background var(--transition);
+    transition: background var(--transition, 0.2s ease);
 }
 
 
@@ -580,7 +580,7 @@ textarea {
 
         font-size: 24px;
 
-        color: var(--color-primary);
+        color: var(--color-primary, #6548f5);
     }
 
 
