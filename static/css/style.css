@@ -1,5 +1,4 @@
 /* Единая точка входа для стилей проекта. */
 @import url("./normalize.css");
 @import url("./base.css");
-@import url("./dashboard.css");
-@import url("./create_subject.css");
+
