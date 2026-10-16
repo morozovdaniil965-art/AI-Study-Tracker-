@@ -638,6 +638,18 @@ textarea {
 
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .sidebar__pro-button,
+  .header__notification,
+  .header__profile {
+    transition-duration: 0.01ms;
+  }
+
+  .sidebar__pro-button:hover {
+    transform: none;
+  }
+}
+
 .footer {
   display: flex;
   align-items: center;
