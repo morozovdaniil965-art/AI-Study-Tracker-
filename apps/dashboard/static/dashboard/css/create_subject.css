@@ -48,7 +48,9 @@
 
 .create-subject__layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(16rem, 21.25rem);
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 26rem);
   gap: 24px;
 
   align-items: stretch;
@@ -341,9 +343,11 @@
 
 .create-subject__illustration {
   position: relative;
+  width: 100%;
+  max-width: 100%;
   min-width: 0;
-  aspect-ratio: 4 / 5;
-  min-height: 24rem;
+  aspect-ratio: 1 / 1;
+  min-height: 0;
 
   border-radius: 20px;
 
