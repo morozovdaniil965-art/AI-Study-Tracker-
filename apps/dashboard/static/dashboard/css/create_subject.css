@@ -457,6 +457,7 @@
   font-weight: 600;
 
   text-decoration: none;
+  white-space: nowrap;
 
   cursor: pointer;
 
@@ -508,7 +509,7 @@
 
 /* Адаптив формы */
 
-@media (max-width: 950px) {
+@media (max-width: 1200px) {
   .create-subject__layout {
     grid-template-columns: minmax(0, 1fr);
   }
