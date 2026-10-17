@@ -11,7 +11,7 @@
 }
 
 .dashboard__title {
-  margin: 0 0 8px;
+  margin: 0 0 var(--space-sm, 8px);
 
   font-size: 32px;
   line-height: 1.2;
@@ -63,7 +63,7 @@
   gap: 18px;
 
   min-height: 110px;
-  padding: 20px;
+  padding: var(--space-xl, 20px);
 
   background: var(--color-white, #ffffff);
 
@@ -75,7 +75,7 @@
 
 
 .stat-card__content h3 {
-  margin: 0 0 4px;
+  margin: 0 0 var(--space-xs, 4px);
 
   font-size: 20px;
   color: var(--color-text, #17172f);
@@ -199,7 +199,7 @@
 .dashboard__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(16rem, 20rem);
-  gap: 20px;
+  gap: var(--space-xl, 20px);
 }
 
 .dashboard__main {
@@ -207,7 +207,7 @@
 
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-xl, 20px);
 }
 
 .dashboard__side {
@@ -215,7 +215,7 @@
 
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-xl, 20px);
 }
 
 
@@ -224,7 +224,7 @@
   ========================= */
 
 .dashboard-card {
-  padding: 24px;
+  padding: var(--space-2xl, 24px);
 
   background: var(--color-white, #ffffff);
 
@@ -240,9 +240,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-md, 12px);
 
-  margin-bottom: 20px;
+  margin-bottom: var(--space-xl, 20px);
 }
 
 .dashboard-card__header h2 {
@@ -272,7 +272,7 @@
 }
 
 .dashboard-card__header select {
-  padding: 9px 12px;
+  padding: 9px var(--space-md, 12px);
 
   border: 1px solid #e5e5ef;
   border-radius: 10px;
@@ -292,7 +292,7 @@
   align-items: center;
   gap: 18px;
 
-  padding: 20px;
+  padding: var(--space-xl, 20px);
 
   border: 1px solid var(--color-border, #eeeeF7);
   border-radius: 14px;
@@ -330,7 +330,7 @@
 }
 
 .today-card__info h3 {
-  margin: 3px 0 8px;
+  margin: 3px 0 var(--space-sm, 8px);
 
   font-size: 21px;
   color: var(--color-text, #17172f);
@@ -382,7 +382,7 @@
 .today-card__action a {
   display: inline-block;
 
-  margin-left: 12px;
+  margin-left: var(--space-md, 12px);
   padding: 13px 22px;
 
   border-radius: 10px;
@@ -407,7 +407,7 @@
 .subjects {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--space-sm, 8px);
 }
 
 
@@ -415,10 +415,10 @@
   display: grid;
   grid-template-columns: 42px minmax(0, 1fr) auto minmax(0, 1fr) minmax(5rem, auto) 20px;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-md, 12px);
   min-width: 0;
 
-  padding: 10px 12px;
+  padding: 10px var(--space-md, 12px);
 
   border: 1px solid transparent;
   border-radius: 12px;
@@ -534,7 +534,7 @@
 
   height: 190px;
 
-  margin-top: 20px;
+  margin-top: var(--space-xl, 20px);
 }
 
 
@@ -639,7 +639,7 @@
   justify-content: space-around;
 
   margin-left: 35px;
-  margin-top: 8px;
+  margin-top: var(--space-sm, 8px);
 
   font-size: 11px;
   color: #858597;
@@ -707,7 +707,7 @@
 
 
 .ai-card h3 {
-  margin: 0 0 8px;
+  margin: 0 0 var(--space-sm, 8px);
 
   font-size: 17px;
   color: var(--color-text, #17172f);
@@ -756,8 +756,8 @@
 .ai-card__button {
   display: block;
 
-  margin-top: 20px;
-  padding: 12px;
+  margin-top: var(--space-xl, 20px);
+  padding: var(--space-md, 12px);
 
   border-radius: 10px;
 
@@ -777,7 +777,7 @@
 .ai-card small {
   display: block;
 
-  margin-top: 8px;
+  margin-top: var(--space-sm, 8px);
 
   text-align: center;
 
@@ -796,7 +796,7 @@
   align-items: center;
   gap: 10px;
 
-  padding: 12px 0;
+  padding: var(--space-md, 12px) 0;
 
   border-bottom: 1px solid #f0f0f5;
 }
@@ -835,7 +835,7 @@
 }
 
 .achievement > span {
-  padding: 5px 8px;
+  padding: 5px var(--space-sm, 8px);
 
   border-radius: 15px;
 
@@ -854,7 +854,7 @@
 
 .motivation {
   min-height: 150px;
-  padding: 24px;
+  padding: var(--space-2xl, 24px);
 
   border-radius: 18px;
 
@@ -895,7 +895,7 @@
   justify-content: space-between;
   align-items: center;
 
-  margin-top: 20px;
+  margin-top: var(--space-xl, 20px);
   padding: 22px 26px;
 
   border-radius: 18px;
@@ -937,7 +937,7 @@
 
 
 .pro-banner h2 {
-  margin: 0 0 4px;
+  margin: 0 0 var(--space-xs, 4px);
 
   font-size: 18px;
 }
@@ -952,7 +952,7 @@
 
 
 .pro-banner > a {
-  padding: 11px 20px;
+  padding: 11px var(--space-xl, 20px);
 
   border-radius: 10px;
 
@@ -1039,7 +1039,7 @@
   .pro-banner {
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: var(--space-xl, 20px);
   }
 
 }

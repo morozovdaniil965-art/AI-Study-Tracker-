@@ -5,7 +5,6 @@
 :root {
   --color-primary: #6548f5;
   --color-primary-light: #eeeaff;
-
   --color-heading: #172554;
   --color-text: #17172f;
   --color-text-strong: #334155;
@@ -13,23 +12,25 @@
   --color-text-secondary-soft: #64748b;
   --color-text-muted: #9999a8;
   --color-text-soft: #94a3b8;
-
   --color-background: #f7f7fc;
   --color-white: #ffffff;
   --color-border: #eeeeF7;
-
   --color-success: #54bd62;
   --color-success-light: #eaf8ed;
-
   --sidebar-width: 240px;
-
   --radius-small: 10px;
   --radius-medium: 14px;
   --radius-large: 18px;
-
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 20px;
+  --space-2xl: 24px;
+  --space-3xl: 32px;
+  --space-4xl: 40px;
   --shadow-card:
     0 5px 20px rgba(80, 70, 150, 0.05);
-
   --transition: 0.2s ease;
 }
 
@@ -136,7 +137,7 @@ textarea {
 
   width: var(--sidebar-width, 240px);
 
-  padding: 24px 16px;
+  padding: var(--space-2xl, 24px) var(--space-lg, 16px);
 
   background: var(--color-white, #ffffff);
 
@@ -248,7 +249,7 @@ textarea {
   width: 34px;
   height: 34px;
 
-  margin-bottom: 12px;
+  margin-bottom: var(--space-md, 12px);
 
   border-radius: 10px;
 
@@ -323,7 +324,7 @@ textarea {
   gap: 10px;
 
   margin-top: 18px;
-  padding: 15px 8px 0;
+  padding: 15px var(--space-sm, 8px) 0;
 
   border-top: 1px solid var(--color-border, #eeeeF7);
 }
@@ -403,7 +404,7 @@ textarea {
 
   min-height: 72px;
 
-  padding: 14px 32px;
+  padding: 14px var(--space-3xl, 32px);
 
   background: rgba(247, 247, 252, 0.9);
 
@@ -423,7 +424,7 @@ textarea {
 
   height: 40px;
 
-  padding: 0 16px;
+  padding: 0 var(--space-lg, 16px);
 
   border: 1px solid #e8e7f1;
   border-radius: 11px;
@@ -459,7 +460,7 @@ textarea {
   display: flex;
   align-items: center;
 
-  gap: 16px;
+  gap: var(--space-lg, 16px);
 }
 
 
@@ -498,7 +499,7 @@ textarea {
 
   min-height: 38px;
 
-  padding: 0 12px;
+  padding: 0 var(--space-md, 12px);
 
   border-radius: 10px;
 
@@ -525,7 +526,7 @@ textarea {
   max-width: 1440px;
   margin-inline: auto;
 
-  padding: 0 32px 40px;
+  padding: 0 var(--space-3xl, 32px) var(--space-4xl, 40px);
 }
 
 
@@ -540,13 +541,13 @@ textarea {
   }
 
   .header {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: var(--space-2xl, 24px);
+    padding-right: var(--space-2xl, 24px);
   }
 
   .content {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: var(--space-2xl, 24px);
+    padding-right: var(--space-2xl, 24px);
   }
 
 }
@@ -562,7 +563,7 @@ textarea {
   .sidebar {
     align-items: center;
 
-    padding: 20px 8px;
+    padding: var(--space-xl, 20px) var(--space-sm, 8px);
   }
 
 
@@ -619,14 +620,14 @@ textarea {
 
 
   .header {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: var(--space-lg, 16px);
+    padding-right: var(--space-lg, 16px);
   }
 
 
   .content {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: var(--space-lg, 16px);
+    padding-right: var(--space-lg, 16px);
   }
 
 
@@ -652,9 +653,9 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  margin-top: 20px;
-  padding: 20px 24px;
+  gap: var(--space-xl, 20px);
+  margin-top: var(--space-xl, 20px);
+  padding: var(--space-xl, 20px) var(--space-2xl, 24px);
   border-top: 1px solid #e8eaf2;
 }
 
@@ -683,6 +684,6 @@ textarea {
   .footer {
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
+    gap: var(--space-sm, 8px);
   }
 }
