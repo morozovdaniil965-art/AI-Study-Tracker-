@@ -19,7 +19,7 @@
 
     <link
         rel="stylesheet"
-        href="{% static 'css/base.css' %}"
+        href="{% static 'css/style.css' %}"
     >
 
     {% block extra_css %}
@@ -162,13 +162,6 @@
 
             <div class="header__actions">
 
-                <button
-                    type="button"
-                    class="header__notification"
-                >
-                    ♧
-                </button>
-
                 {% if user.is_authenticated %}
 
                     <a
@@ -196,18 +189,18 @@
 
 
         </main>
-        <footer class="create-subject__footer">
+        <footer class="footer">
 
-                        <p class="create-subject__footer-text">
+                        <p class="footer-text">
                             © 2026 AI Study Tracker
                         </p>
 
-                        <p class="create-subject__footer-text">
+                        <p class="footer-text">
                             Создавай направления, учись и отслеживай свой прогресс.
                         </p>
 
                         <a
-                            class="create-subject__footer-link"
+                            class="footer-link"
                             href="#"
                         >
                             Помощь и поддержка
