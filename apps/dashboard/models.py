@@ -10,6 +10,8 @@ class FieldOfStudy( models.Model):
 
     description = models.TextField( blank = True,  verbose_name = "Описание направления:" )
 
+    image_icon = models.ImageField( blank=True, upload_to='subject_icons/%Y/%m/%d', verbose_name = "Добавить иконку:")
+
     date_create = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

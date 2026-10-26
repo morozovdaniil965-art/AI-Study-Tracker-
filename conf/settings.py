@@ -124,6 +124,10 @@ STATICFILES_DIRS = [ BASE_DIR /  'static' ]
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
 
+MEDIA_ROOT =  BASE_DIR / 'media'
+
+MEDIA_URL = '/media/'
+
 MAILERS = {
     'default': {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',

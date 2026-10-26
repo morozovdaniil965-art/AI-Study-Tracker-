@@ -50,14 +50,8 @@
                     Название направления
                     <span>*</span>
                 </label>
+                {{ form.title }}
 
-                <input
-                    id="subject-name"
-                    name="subject_name"
-                    type="text"
-                    placeholder="Например, Python, Django, Frontend"
-                    required
-                >
 
                 <small>
                     Сделай название коротким и понятным
@@ -71,13 +65,8 @@
                 <label for="subject-description">
                     Описание
                 </label>
+                {{ form.description }}
 
-                <textarea
-                    id="subject-description"
-                    name="subject_description"
-                    placeholder="Расскажи, чему хочешь научиться и какие цели у этого направления"
-                    maxlength="300"
-                ></textarea>
 
                 <div class="subject-form__counter">
                     0 / 300
@@ -216,12 +205,6 @@
 
                     </span>
 
-                    <input
-                        id="subject-icon"
-                        name="subject_icon"
-                        type="file"
-                        accept=".png,.jpg,.jpeg,.svg"
-                    >
 
                 </label>
 
