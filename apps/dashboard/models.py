@@ -16,13 +16,6 @@ class FieldOfStudy( models.Model):
 
     date_create = models.DateTimeField(auto_now_add=True)
 
-    def clean(self):
-
-        if self.image_user and self.image_icon:
-
-            raise ('Ошибка')
-
-
     def __str__(self):
 
         return self.title

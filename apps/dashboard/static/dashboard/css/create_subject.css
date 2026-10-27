@@ -129,6 +129,22 @@
   color: var(--color-text-soft, #94a3b8);
 }
 
+.subject-icons input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.subject-icons input[type="radio"]:checked + .subject-icon {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-light);
+}
+.subject-icons input[type="radio"]:focus-visible + .subject-icon {
+    outline: 3px solid rgba(99, 71, 245, 0.35);
+    outline-offset: 3px;
+}
+
 .subject-form__field small {
   display: block;
 
@@ -240,15 +256,6 @@
   border-color: #a89af9;
   transform: translateY(-2px);
 }
-
-.subject-icon--active {
-  border: 2px solid var(--color-primary, #6548f5);
-
-  background-color: #f5f3ff;
-
-  color: var(--color-primary, #6548f5);
-}
-
 
 /* Загрузка изображения */
 
