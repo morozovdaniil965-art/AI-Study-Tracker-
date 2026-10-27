@@ -38,7 +38,7 @@ class FieldOfStudyForm( ModelForm ):
 
         cleaned_data = super().clean()
 
-        if cleaned_data.get('image_user') and cleaned_data.get('image_icon'):
+        if bool( cleaned_data.get('image_user') ) == bool( cleaned_data.get('image_icon')) :
             raise ValidationError(
                 "Выберите один способ задания иконки для направления"
             )

@@ -19,6 +19,7 @@ def CreateFieldOfStudy(request):
         form = FieldOfStudyForm(request.POST, request.FILES)
 
         if form.is_valid():
+            print(form.cleaned_data)
 
             field_of_study = form.save(commit=False)
 
