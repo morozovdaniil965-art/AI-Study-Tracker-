@@ -310,12 +310,17 @@
 
 .subject-upload input[type="file"] {
   position: absolute;
+
   width: 1px;
   height: 1px;
+
   padding: 0;
   margin: -1px;
+
   overflow: hidden;
+
   border: 0;
+  outline: none;
 }
 
 .subject-upload:focus-within {

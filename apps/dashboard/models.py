@@ -10,9 +10,18 @@ class FieldOfStudy( models.Model):
 
     description = models.TextField( blank = True,  verbose_name = "Описание направления:" )
 
-    image_icon = models.ImageField( blank=True, upload_to='subject_icons/%Y/%m/%d', verbose_name = "Добавить иконку:")
+    image_user = models.ImageField( null = True, blank = True, upload_to='subject_icons/%Y/%m/%d', verbose_name = "Добавить иконку:")
+
+    image_icon = models.CharField( blank = True, max_length=30, verbose_name = "Стандартная иконка:" )
 
     date_create = models.DateTimeField(auto_now_add=True)
+
+    def clean(self):
+
+        if self.image_user and self.image_icon:
+
+            raise ('Ошибка')
+
 
     def __str__(self):
 
