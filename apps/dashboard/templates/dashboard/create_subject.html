@@ -68,7 +68,7 @@
                 {{ form.description }}
 
 
-                <div class="subject-form__counter">
+                <div class="subject-form__counter" id="description-counter">
                     0 / 300
                 </div>
 
@@ -234,7 +234,7 @@
 
             </fieldset>
 
-
+            <p> {{ form.non_field_errors }} </p>
             <div class="subject-form__actions">
 
                 <a
@@ -285,6 +285,6 @@
 
     </div>
 
-
+    <script src="{% static 'dashboard/js/extra_js.js'%}"></script>
 
 {% endblock %}

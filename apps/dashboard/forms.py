@@ -25,7 +25,8 @@ class FieldOfStudyForm( ModelForm ):
             {
                 'id': "subject-description",
                 'name': "subject_description",
-                'placeholder':"Расскажи, чему хочешь научиться и какие цели у этого направления"
+                'placeholder':"Расскажи, чему хочешь научиться и какие цели у этого направления",
+                'maxlength': 300,
             }),
             'image_user':forms.FileInput(attrs=
             {
