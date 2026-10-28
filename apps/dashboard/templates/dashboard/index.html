@@ -236,15 +236,43 @@
 
                 <div class="subjects">
 
+                    {% for direction in directions %}
+
 
                     <a href="#" class="subject">
 
-                        <div class="subject__icon subject__icon--python">
+                        <div class="subject__icon">
+
+                            {% if direction.image_icon == 'python' %}
                             🐍
+
+                            {% elif direction.image_icon == 'django' %}
+                            dj
+
+                            {% elif direction.image_icon == 'html' %}
+                            HTML
+
+                            {% elif direction.image_icon == 'css' %}
+                            CSS
+
+                            {% elif direction.image_icon == 'javascript' %}
+                            JS
+
+                            {% elif direction.image_icon == 'analytics' %}
+                            📊
+
+                            {% elif direction.image_icon == 'database' %}
+                            🗄
+
+                            {% elif direction.image_icon == 'programming' %}
+                            &lt;/&gt;
+
+                            {% endif %}
+
                         </div>
 
                         <strong>
-                            Python
+                            {{ direction.title }}
                         </strong>
 
                         <span class="subject__percent subject__percent--green">
@@ -265,63 +293,35 @@
 
                     </a>
 
+                    {% endfor %}
+<!--                    <a href="#" class="subject">-->
 
-                    <a href="#" class="subject">
+<!--                        <div class="subject__icon subject__icon&#45;&#45;python">-->
+<!--                            🐍-->
+<!--                        </div>-->
 
-                        <div class="subject__icon subject__icon--django">
-                            dj
-                        </div>
+<!--                        <strong>-->
+<!--                            Python-->
+<!--                        </strong>-->
 
-                        <strong>
-                            Django
-                        </strong>
+<!--                        <span class="subject__percent subject__percent&#45;&#45;green">-->
+<!--                            72%-->
+<!--                        </span>-->
 
-                        <span class="subject__percent subject__percent--purple">
-                            41%
-                        </span>
+<!--                        <div class="subject__bar">-->
+<!--                            <div style="width: 72%;"></div>-->
+<!--                        </div>-->
 
-                        <div class="subject__bar">
-                            <div style="width: 41%;"></div>
-                        </div>
+<!--                        <span class="subject__count">-->
+<!--                            18 из 25 тем-->
+<!--                        </span>-->
 
-                        <span class="subject__count">
-                            12 из 29 тем
-                        </span>
+<!--                        <span class="subject__arrow">-->
+<!--                            →-->
+<!--                        </span>-->
 
-                        <span class="subject__arrow">
-                            →
-                        </span>
+<!--                    </a>-->
 
-                    </a>
-
-
-                    <a href="#" class="subject">
-
-                        <div class="subject__icon subject__icon--english">
-                            🇬🇧
-                        </div>
-
-                        <strong>
-                            English
-                        </strong>
-
-                        <span class="subject__percent subject__percent--pink">
-                            23%
-                        </span>
-
-                        <div class="subject__bar">
-                            <div style="width: 23%;"></div>
-                        </div>
-
-                        <span class="subject__count">
-                            5 из 22 тем
-                        </span>
-
-                        <span class="subject__arrow">
-                            →
-                        </span>
-
-                    </a>
 
                 </div>
 

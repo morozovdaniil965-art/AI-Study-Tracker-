@@ -1,11 +1,27 @@
 from django.shortcuts import render, redirect
 from .forms import FieldOfStudyForm
 from django.contrib.auth.decorators import login_required
+from .models import FieldOfStudy
 
 def Index(request):
+    ICON_MAP = {
+        'python': '🐍',
+        'django': 'dj',
+        'html': 'HTML',
+        'css': 'CSS',
+        'javascript': 'JS',
+        'analytics': '📊',
+        'database': '🗄',
+        'programming': '</>',
+    }
 
-    return render( request, 'dashboard/index.html')
+    directions = FieldOfStudy.objects.filter(user=request.user)
 
+    return render(
+        request,
+        'dashboard/index.html',
+        {'directions': directions}
+    )
 
 def CreateSubject(request):
 
