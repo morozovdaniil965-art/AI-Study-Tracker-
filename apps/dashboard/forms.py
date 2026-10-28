@@ -5,7 +5,12 @@ from django.core.exceptions import ValidationError
 
 
 class FieldOfStudyForm( ModelForm ):
-
+    icon_type = forms.ChoiceField(
+        choices=[
+            ('default', 'Выбрать из стандартных'),
+            ('custom', 'Загрузить свою иконку'),
+        ]
+    )
 
     class Meta:
 
@@ -33,13 +38,18 @@ class FieldOfStudyForm( ModelForm ):
                 'id':"subject-icon",
                 'name':"subject_icon",
                 'accept':".png,.jpg,.jpeg,.svg"
-            })
+            }),
+
         }
     def clean(self):
 
         cleaned_data = super().clean()
 
-        if bool( cleaned_data.get('image_user') ) == bool( cleaned_data.get('image_icon')) :
+        icon_type = cleaned_data.get('icon_type')
+        image_icon = cleaned_data.get('image_icon')
+        image_user = cleaned_data.get('image_user')
+
+        if bool( image_user) == bool( image_icon) :
             raise ValidationError(
                 "Выберите один способ задания иконки для направления"
             )
