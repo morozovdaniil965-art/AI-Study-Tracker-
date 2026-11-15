@@ -242,33 +242,11 @@
                     <a href="#" class="subject">
 
                         <div class="subject__icon">
-
-                            {% if direction.image_icon == 'python' %}
-                            🐍
-
-                            {% elif direction.image_icon == 'django' %}
-                            dj
-
-                            {% elif direction.image_icon == 'html' %}
-                            HTML
-
-                            {% elif direction.image_icon == 'css' %}
-                            CSS
-
-                            {% elif direction.image_icon == 'javascript' %}
-                            JS
-
-                            {% elif direction.image_icon == 'analytics' %}
-                            📊
-
-                            {% elif direction.image_icon == 'database' %}
-                            🗄
-
-                            {% elif direction.image_icon == 'programming' %}
-                            &lt;/&gt;
-
+                            {% if direction.image_user %}
+                                <img src="{{ direction.image_user.url }}" alt="">
+                            {% else %}
+                                {{ direction.display_icon }}
                             {% endif %}
-
                         </div>
 
                         <strong>
@@ -276,15 +254,15 @@
                         </strong>
 
                         <span class="subject__percent subject__percent--green">
-                            72%
+                            {{ direction.progress_percent }}%
                         </span>
 
                         <div class="subject__bar">
-                            <div style="width: 72%;"></div>
+                            <div style="width: {{ direction.progress_percent }}%;"></div>
                         </div>
 
                         <span class="subject__count">
-                            18 из 25 тем
+                            {{ direction.completed_topics }} из {{ direction.total_topics }} тем
                         </span>
 
                         <span class="subject__arrow">
@@ -294,35 +272,6 @@
                     </a>
 
                     {% endfor %}
-<!--                    <a href="#" class="subject">-->
-
-<!--                        <div class="subject__icon subject__icon&#45;&#45;python">-->
-<!--                            🐍-->
-<!--                        </div>-->
-
-<!--                        <strong>-->
-<!--                            Python-->
-<!--                        </strong>-->
-
-<!--                        <span class="subject__percent subject__percent&#45;&#45;green">-->
-<!--                            72%-->
-<!--                        </span>-->
-
-<!--                        <div class="subject__bar">-->
-<!--                            <div style="width: 72%;"></div>-->
-<!--                        </div>-->
-
-<!--                        <span class="subject__count">-->
-<!--                            18 из 25 тем-->
-<!--                        </span>-->
-
-<!--                        <span class="subject__arrow">-->
-<!--                            →-->
-<!--                        </span>-->
-
-<!--                    </a>-->
-
-
                 </div>
 
             </section>

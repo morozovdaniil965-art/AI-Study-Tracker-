@@ -241,7 +241,11 @@
 
             </fieldset>
 
-            <p> {{ form.non_field_errors }} </p>
+            {% if form.non_field_errors %}
+                <div class="subject-form__errors">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
             <div class="subject-form__actions">
 
                 <a
@@ -292,6 +296,6 @@
 
     </div>
 
-    <script src="{% static 'dashboard/js/extra_js.js'%}"></script>
+    <script src="{% static 'dashboard/js/extra_js.js' %}"></script>
 
 {% endblock %}

@@ -1,6 +1,16 @@
 from django.shortcuts import render, redirect
 from .forms import FieldOfStudyForm
 from django.contrib.auth.decorators import login_required
+from django.db.models import (
+    Case,
+    Count,
+    ExpressionWrapper,
+    F,
+    IntegerField,
+    Q,
+    Value,
+    When,
+)
 from .models import FieldOfStudy
 
 def Index(request):
@@ -15,7 +25,31 @@ def Index(request):
         'programming': '</>',
     }
 
-    directions = FieldOfStudy.objects.filter(user=request.user)
+    if request.user.is_authenticated:
+        directions = (
+            FieldOfStudy.objects.filter(user=request.user)
+            .annotate(
+                total_topics=Count('topics'),
+                completed_topics=Count(
+                    'topics',
+                    filter=Q(topics__is_completed=True),
+                ),
+            )
+            .annotate(
+                progress_percent=Case(
+                    When(total_topics=0, then=Value(0)),
+                    default=ExpressionWrapper(
+                        F('completed_topics') * 100 / F('total_topics'),
+                        output_field=IntegerField(),
+                    ),
+                    output_field=IntegerField(),
+                ),
+            )
+        )
+        for direction in directions:
+            direction.display_icon = ICON_MAP.get(direction.image_icon, '')
+    else:
+        directions = FieldOfStudy.objects.none()
 
     return render(
         request,

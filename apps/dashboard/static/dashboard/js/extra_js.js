@@ -13,6 +13,26 @@ iconOptions.forEach(function (icon) {
         imageUpload.value = '';
     });
 });
+
+defaultIcon.addEventListener('change', function () {
+    if (!defaultIcon.checked) {
+        return;
+    }
+
+    customIcon.checked = false;
+    imageUpload.value = '';
+});
+
+customIcon.addEventListener('change', function () {
+    if (!customIcon.checked) {
+        return;
+    }
+
+    defaultIcon.checked = false;
+    iconOptions.forEach(function (icon) {
+        icon.checked = false;
+    });
+});
 imageUpload.addEventListener('change', function () {
     if (imageUpload.files.length) {
         customIcon.checked = true;
@@ -25,6 +45,9 @@ imageUpload.addEventListener('change', function () {
 });
 
 
-description.addEventListener('input', function () {
+function updateDescriptionCounter() {
     counter.textContent = `${description.value.length} / 300`;
-});
+}
+
+description.addEventListener('input', updateDescriptionCounter);
+updateDescriptionCounter();

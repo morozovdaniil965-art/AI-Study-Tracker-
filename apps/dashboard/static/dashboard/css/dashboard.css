@@ -451,6 +451,13 @@
   font-weight: 700;
 }
 
+.subject__icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
 .subject__icon--python {
   background: #fff6dc;
 }
