@@ -236,27 +236,33 @@
 
                 <div class="subjects">
 
+                    {% for direction in directions %}
+
 
                     <a href="#" class="subject">
 
-                        <div class="subject__icon subject__icon--python">
-                            🐍
+                        <div class="subject__icon">
+                            {% if direction.image_user %}
+                                <img src="{{ direction.image_user.url }}" alt="">
+                            {% else %}
+                                {{ direction.display_icon }}
+                            {% endif %}
                         </div>
 
                         <strong>
-                            Python
+                            {{ direction.title }}
                         </strong>
 
                         <span class="subject__percent subject__percent--green">
-                            72%
+                            {{ direction.progress_percent }}%
                         </span>
 
                         <div class="subject__bar">
-                            <div style="width: 72%;"></div>
+                            <div style="width: {{ direction.progress_percent }}%;"></div>
                         </div>
 
                         <span class="subject__count">
-                            18 из 25 тем
+                            {{ direction.completed_topics }} из {{ direction.total_topics }} тем
                         </span>
 
                         <span class="subject__arrow">
@@ -265,64 +271,7 @@
 
                     </a>
 
-
-                    <a href="#" class="subject">
-
-                        <div class="subject__icon subject__icon--django">
-                            dj
-                        </div>
-
-                        <strong>
-                            Django
-                        </strong>
-
-                        <span class="subject__percent subject__percent--purple">
-                            41%
-                        </span>
-
-                        <div class="subject__bar">
-                            <div style="width: 41%;"></div>
-                        </div>
-
-                        <span class="subject__count">
-                            12 из 29 тем
-                        </span>
-
-                        <span class="subject__arrow">
-                            →
-                        </span>
-
-                    </a>
-
-
-                    <a href="#" class="subject">
-
-                        <div class="subject__icon subject__icon--english">
-                            🇬🇧
-                        </div>
-
-                        <strong>
-                            English
-                        </strong>
-
-                        <span class="subject__percent subject__percent--pink">
-                            23%
-                        </span>
-
-                        <div class="subject__bar">
-                            <div style="width: 23%;"></div>
-                        </div>
-
-                        <span class="subject__count">
-                            5 из 22 тем
-                        </span>
-
-                        <span class="subject__arrow">
-                            →
-                        </span>
-
-                    </a>
-
+                    {% endfor %}
                 </div>
 
             </section>
