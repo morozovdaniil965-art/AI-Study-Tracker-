@@ -54,7 +54,7 @@ def Index(request):
     return render(
         request,
         'dashboard/index.html',
-        {'directions': directions}
+        {'directions': directions }
     )
 
 def CreateSubject(request):
