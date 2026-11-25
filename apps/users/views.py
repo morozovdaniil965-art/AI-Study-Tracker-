@@ -8,7 +8,7 @@ from django.views.generic import FormView
 class UserLoginView(LoginView):
     template_name = 'users/login.html'
     redirect_authenticated_user = True
-    success_url = reverse_lazy('dashboard:index')
+    next_page = reverse_lazy('dashboard:index')
 
 
 class UserLogoutView(LogoutView):
