@@ -75,7 +75,7 @@
             <div class="stat-card__content">
 
                 <h3>
-                    3
+                    {{ directions.count }}
                 </h3>
 
                 <p>
@@ -234,48 +234,21 @@
                 </div>
 
 
-                <div class="subjects">
-
-                    {% for direction in directions %}
-
-
+                <p id="subjects-status" role="status" aria-live="polite">Загружаем направления…</p>
+                <div class="subjects" id="subjects-list" data-json-url="{% static 'dashboard/data/subjects.json' %}" hidden></div>
+                <button type="button" id="subjects-retry" hidden>Загрузить ещё раз</button>
+                <template id="subject-template">
                     <a href="#" class="subject">
-
-                        <div class="subject__icon">
-                            {% if direction.image_user %}
-                                <img src="{{ direction.image_user.url }}" alt="">
-                            {% else %}
-                                {{ direction.display_icon }}
-                            {% endif %}
-                        </div>
-
-                        <strong>
-                            {{ direction.title }}
-                        </strong>
-
-                        <span class="subject__percent subject__percent--green">
-                            {{ direction.progress_percent }}%
-                        </span>
-
-                        <div class="subject__bar">
-                            <div style="width: {{ direction.progress_percent }}%;"></div>
-                        </div>
-
-                        <span class="subject__count">
-                            {{ direction.completed_topics }} из {{ direction.total_topics }} тем
-                        </span>
-
-                        <span class="subject__arrow">
-                            →
-                        </span>
-
+                        <div class="subject__icon"></div>
+                        <strong class="subject__title"></strong>
+                        <span class="subject__percent subject__percent--green"></span>
+                        <div class="subject__bar"><div></div></div>
+                        <span class="subject__count"></span>
+                        <span class="subject__arrow" aria-hidden="true">→</span>
                     </a>
-
-                    {% endfor %}
-                </div>
+                </template>
 
             </section>
-
 
             <!-- Статистика -->
             <section class="dashboard-card statistics">
@@ -564,4 +537,8 @@
 
 </div>
 
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'dashboard/js/subjects_fetch.js' %}" defer></script>
 {% endblock %}

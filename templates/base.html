@@ -171,12 +171,17 @@
 
                 {% if user.is_authenticated %}
 
-                    <a
-                        href="#"
-                        class="header__profile"
-                    >
+                    <span class="header__profile">
                         {{ user.username }}
-                    </a>
+                    </span>
+                    <form method="post" action="{% url 'users:logout' %}" class="header__logout-form">
+                        {% csrf_token %}
+                        <button type="submit" class="header__logout">Выйти</button>
+                    </form>
+
+                {% else %}
+
+                    <a href="{% url 'users:login' %}" class="header__profile">Войти</a>
 
                 {% endif %}
 

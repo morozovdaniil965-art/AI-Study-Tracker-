@@ -1,0 +1,6 @@
+[
+  {"id": 10, "title": "Python", "icon": "🐍", "progress": 67, "completedTopics": 2, "totalTopics": 3},
+  {"id": 11, "title": "Django", "icon": "dj", "progress": 100, "completedTopics": 3, "totalTopics": 3},
+  {"id": 12, "title": "JavaScript", "icon": "JS", "progress": 0, "completedTopics": 0, "totalTopics": 3},
+  {"id": 13, "title": "Инвестиции", "icon": "📊", "progress": 0, "completedTopics": 0, "totalTopics": 0}
+]
