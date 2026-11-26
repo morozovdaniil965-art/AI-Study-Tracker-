@@ -57,10 +57,6 @@ def Index(request):
         {'directions': directions }
     )
 
-def CreateSubject(request):
-
-    return render( request, 'dashboard/create_subject.html')
-
 @login_required
 def CreateFieldOfStudy(request):
 
@@ -69,6 +65,7 @@ def CreateFieldOfStudy(request):
         form = FieldOfStudyForm(request.POST, request.FILES)
 
         if form.is_valid():
+
             print(form.cleaned_data)
 
             field_of_study = form.save(commit=False)
